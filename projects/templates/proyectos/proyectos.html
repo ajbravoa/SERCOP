@@ -1,0 +1,68 @@
+<!---HEREDANDO DE LA PAGINA PRINCIPAL-->
+{% extends "main.html" %}
+
+{% block content %}
+
+<!---TITULO DE LA PAGINA-->
+<h1 style="text-align: center;"><strong>CONSULTA DE PROYECTOS</strong></h1>
+<br>
+
+
+<table class="table">
+    <thead>
+            <th>
+                Proyecto
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                 Link
+            </th>
+            <th>
+                Origen
+            </th>
+            <th>
+                Votacion
+            </th>
+            <th>
+                % de Votación
+            </th>
+            <th>
+                Fecha de Creación
+            </th>
+
+
+        {% for proy in proyecto %}
+            <tr>
+                <td>{{proy.Titulo}}</td>
+                <td>{{proy.Descripcion}}</td>
+                <td>{{proy.DemoLink}}</td>
+                <td>{{proy.SourceLink}}</td>
+                <td>{{proy.VotosTotal}}</td>
+                <td>{{proy.VotosRatio}}</td>
+                <td>{{proy.FechaCreacion}}</td>
+
+                <td><a href="{% url 'actualizar_proyectos' proy.Id %}">Editar</a></td>
+
+
+                <td><a href="{% url 'eliminar_proyectos' proy.Id %}">Eliminar</a></td>
+
+                <!-- OBTENEMOS EL ID Y NOS REDIRIGIMOS A LA PAGINA DE CONSULTA-->
+                <td><a href="{% url 'proyecto' proy.Id %}">Ver</a></td>
+
+            </tr>
+            
+
+        {% endfor %}
+    </thead>
+{% endblock content %}
+
+
+</table>
+ <!---INCUYO EL PIE DE PAGINA-->
+ {% include 'footer.html' %}
+
+
+
+

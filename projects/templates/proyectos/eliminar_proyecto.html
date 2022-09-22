@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        <div class="text-center">
+            <p>Estas seguro de eliminar el registro "{{objeto}}" </p>
+            <a href="{% url 'proyectos' %}">Regresar </a>
+            <input type="submit" value="Confirm">
+        </div>
+
+
+
+
+    </form>
+
+
+{% endblock content %}

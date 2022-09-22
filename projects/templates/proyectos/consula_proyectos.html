@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+
+{% block content %}
+<H1 style="text-align: center;"><STRONG> CONSULTA DE PROYECTOS</STRONG></H1>
+    <hr>
+    <form id="frmConsultaEsp">
+        <div class="form-row">
+            <div class="col">
+                <label for="lblProyecto"><strong>Proyecto</strong></label>
+                <input type="text" id="txtTitulo" readonly class="form-control" value="{{proyecto.Titulo}}" />
+            </div>
+
+
+            <div class="col">
+                <label for="lblDescripcion"><strong>Descripcion</strong></label>
+                <textarea class="form-control" id="txtDescripcion" rows="3" readonly>{{proyecto.Descripcion}}
+                </textarea>
+            </div>
+
+
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col">
+                <label for="lblOrigen"><strong>Origen</strong></label>
+                <input type="text" id="txtDemoLink" readonly class="form-control" value="{{proyecto.DemoLink}}" />
+            </div>
+
+
+            <div class="col">
+                <label for="lblSourceLink"><strong>Origen</strong></label>
+                <textarea class="form-control" id="txtSourceLInk" rows="3" readonly>{{proyecto.SourceLink}}
+                </textarea>
+            </div>
+
+
+        </div>
+
+        <br>
+        <div class="form-row">
+            <div class="col">
+                <label for="lblVotacion"><strong>Votación</strong></label>
+                <input type="text" id="txtVotacion" readonly class="form-control" value="{{proyecto.VotosTotal}}" />
+            </div>
+
+
+            <div class="col">
+                <label for="lblPorcVotacion"><strong>Origen</strong></label>
+                <input type="text" id="txtVotacion" readonly class="form-control" value="{{proyecto.VotosRatio}} %" />
+                </textarea>
+            </div>
+
+
+        </div>
+
+        <br>
+
+        <div class="form-row">
+            <div class="col">
+                <label for="lblFechaCreacion"><strong>Votación</strong></label>
+                <input type="text" id="txtFechaCreacion" readonly class="form-control" value="{{proyecto.FechaCreacion}}" />
+            </div>
+
+            <div class="col">
+                <img src="{{proyecto.ImagenDefecto.url}}" width="300px" height="100px"  />
+
+
+            </div>
+
+
+           
+
+        </div>
+
+
+
+    </form>
+
+{% endblock content %}
+    
+ <!---INCUYO EL PIE DE PAGINA-->
+ {% include 'footer.html' %}
