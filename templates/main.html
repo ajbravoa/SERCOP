@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!---CARGO EL CONTENIDO DE LA RUTA STATIC-->
+{% load static %}
+
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <!---REFERENCIO A LA LIBRERIA BOOSTRAP QUE SE ENCUENTRA EN LA CARPETA STATIC-->
+    <link  rel="stylesheet" type="text/css" href='{% static "bootstrap/css/bootstrap.min.css"  %}' />
+    <script src='{% static "bootstrap/js/bootstrap.min.js" %}'></script>
+
+    
+</head>
+<body>
+    
+    {% include 'navbar.html' %}
+
+
+    <!---DEFINO EL CONTENIDO DE LA PAGINA (CONTENIDO DINAMICO)-->
+    {% block content %}
+
+
+    {% endblock content %}
+
+
+   
+
+
+    
+</body>
+</html>
